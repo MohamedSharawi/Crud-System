@@ -1,0 +1,105 @@
+/* ===== Basic Reset & Font ===== */
+body {
+  font-family: 'Playpen Sans', sans-serif;
+  background: #f7f7f7;
+}
+
+/* ===== Container ===== */
+#crudSystem .container {
+  background: #ffffff !important;
+  border: 1px solid #e5e5e5;
+  border-radius: 15px;
+}
+
+/* Headings */
+h1 {
+  color: #333;
+}
+
+p {
+  color: #777;
+}
+
+/* ===== Inputs ===== */
+input.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s;
+}
+
+input.form-control:focus {
+  border-color: #000;
+  box-shadow: none;
+}
+
+/* ===== Buttons ===== */
+#addBtn, #updateBtn {
+  background: #000;
+  border: none;
+  transition: 0.2s;
+}
+
+#addBtn:hover,
+#updateBtn:hover {
+  background: #333;
+}
+
+/* Search input */
+#searchInput {
+  border-radius: 20px;
+}
+
+/* ===== Table ===== */
+table {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+thead tr {
+  background: #000;
+  color: #fff;
+}
+
+tbody tr:hover {
+  background: #f1f1f1;
+}
+
+/* Action Buttons */
+.edit-btn,
+.delete-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.edit-btn {
+  background: #198754;
+}
+
+.delete-btn {
+  background: #dc3545;
+}
+
+.edit-btn:hover {
+  background: #157347;
+}
+
+.delete-btn:hover {
+  background: #bb2d3b;
+}
+
+/* Product Image */
+.product-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* Alerts */
+.alert {
+  padding: 8px 12px;
+  font-size: 14px;
+}

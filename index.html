@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD SYSTEM</title>
+    <link href="https://fonts.cdnfonts.com/css/playpen-sans" rel="stylesheet" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-light-subtle">
+    <section id="crudSystem">
+      <div
+        class="container mt-4 p-5 rounded-4 shadow-lg"
+        style="background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)"
+      >
+        <h1 class="text-center fs-1 fw-bold">CRUD SYSTEM</h1>
+        
+        <p class="text-center fst-italic">search your products easily..</p>
+        <!-- Product Name -->
+        <div class="nameProduct">
+          <label for="productName" class="fw-light py-2 fw-medium">
+            <i class="fa-solid fa-bag-shopping"></i> Product Name</label
+          >
+          <input
+            type="text"
+            class="form-control fs-6 fw-light"
+            placeholder="enter product name"
+            id="productName"
+            oninput="nameValidation()"
+          />
+          <!-- product name validation -->
+          <div id="nameValid" class="alert alert-danger d-none">
+            Please enter product name start with capital letter and between 3 to 8
+            letters.
+          </div>
+        </div>
+
+        <!-- Product price -->
+        <div class="priceProduct">
+          <label for="productprice" class="fw-light py-2 fw-medium"
+            ><i class="fa-solid fa-money-check"></i> Product Price</label
+          >
+          <input
+            type="text"
+            class="form-control fs-6 fw-light"
+            placeholder="enter product price"
+            id="productPrice"
+            oninput="priceValidation()"
+          />
+        </div>
+        <!-- Product Price Validation -->
+        <div id="priceValid" class="alert alert-danger d-none">
+          Please enter a product price in number between 1000$ to 20000$
+        </div>
+
+        <!-- Product type -->
+        <div class="typeProduct">
+          <label for="producttype" class="fw-light py-2 fw-medium"
+            ><i class="fa-solid fa-basket-shopping"></i> Product Type</label
+          >
+          <input
+            type="text"
+            class="form-control fs-6 fw-light"
+            placeholder="enter product price"
+            id="productType"
+            oninput="typeValidation()"
+          />
+        </div>
+        <!-- Product Type Validation -->
+        <div id="typeValid" class="alert alert-danger d-none">
+          Please enter a product type (ex. Mobile , Screen , Tablet , Watch)
+        </div>
+
+        <!-- Product description -->
+        <div class="descriptionProduct">
+          <label for="productDescription" class="fw-light py-2 fw-medium"
+            ><i class="fa-solid fa-tag"></i> Product Description</label
+          >
+          <input
+            type="text"
+            class="form-control fs-6 fw-light"
+            placeholder="enter product description"
+            id="productDescription"
+            oninput="descriptionValidation()"
+          />
+        </div>
+        <!-- Product Description Validation -->
+        <div id="descriptionValid" class="alert alert-danger d-none">
+          Please enter a product description (1 to 500 characters).
+        </div>
+
+        <!-- Product image -->
+        <div class="imageProduct">
+          <label for="productImage" class="fw-light py-2 fw-medium"
+            ><i class="fa-solid fa-barcode"></i> Product Image</label
+          >
+          <input
+            type="file"
+            accept="image/*"
+            class="form-control fs-6 fw-light"
+            id="productImage"
+          />
+        </div>
+
+        <!-- Product buttons -->
+        <div id="productButtons" class="text-center col-md-12">
+          <button
+            onclick="addProduct()"
+            type="button"
+            id="addBtn"
+            class="btn btn-dark rounded-pill w-50 my-4 py-2 fw-bold fs-5 col-sm-12"
+          >
+            Add Product
+          </button>
+          <button
+            onclick="updateProduct()"
+            type="button"
+            id="updateBtn"
+            class="btn btn-dark rounded-pill w-50 my-4 py-2 fw-bold fs-5 d-none"
+          >
+            Update Product
+          </button>
+          <input
+            oninput="searchProduct()"
+            type="search"
+            id="searchInput"
+            class="form-control w-75 d-inline-block fw-light py-2"
+            placeholder="search product"
+          />
+        </div>
+        <!-- Table -->
+        <table
+          class="table table-striped-columns align-middle text-center mt-4 shadow-lg table-light rounded-4 overflow-hidden"
+        >
+          <thead>
+            <tr>
+              <th scope="col" class="py-3 px-4">#</th>
+              <th scope="col" class="py-3 px-4">Name</th>
+              <th scope="col" class="py-3 px-4">Price</th>
+              <th scope="col" class="py-3 px-4">Type</th>
+              <th scope="col" class="py-3 px-4">Description</th>
+              <th scope="col" class="py-3 px-4">Image</th>
+              <th scope="col" class="py-3 px-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
